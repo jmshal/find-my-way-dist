@@ -11,6 +11,9 @@
   "files": [
     "dist"
   ],
+  "dependencies": {
+    "@types/node": "^12.12.14"
+  },
   "devDependencies": {
     "find-my-way": "^2.2.1",
     "patch-package": "^6.2.0",
