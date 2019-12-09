@@ -1,0 +1,21 @@
+{
+  "name": "@jmshal/find-my-way-dist",
+  "version": "0.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "webpack --mode production && cp ./node_modules/find-my-way/index.d.ts ./dist",
+    "prepublishOnly": "npm run build"
+  },
+  "files": [
+    "./dist"
+  ],
+  "devDependencies": {
+    "find-my-way": "^2.2.1",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
+  },
+  "keywords": [],
+  "author": "Jacob Marshall <github@jacob.dev> (https://jacob.dev)",
+  "license": "MIT"
+}
