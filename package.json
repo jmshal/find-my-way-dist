@@ -4,7 +4,7 @@
   "description": "",
   "main": "dist/index.js",
   "scripts": {
-    "postinstall": "patch-package",
+    "prepare": "patch-package",
     "build": "webpack --mode production && cp ./node_modules/find-my-way/index.d.ts ./dist",
     "prepublishOnly": "npm run build"
   },
