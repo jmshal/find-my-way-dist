@@ -4,6 +4,7 @@
   "description": "",
   "main": "dist/index.js",
   "scripts": {
+    "postinstall": "patch-package",
     "build": "webpack --mode production && cp ./node_modules/find-my-way/index.d.ts ./dist",
     "prepublishOnly": "npm run build"
   },
@@ -12,6 +13,7 @@
   ],
   "devDependencies": {
     "find-my-way": "^2.2.1",
+    "patch-package": "^6.2.0",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10"
   },

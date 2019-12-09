@@ -1,0 +1,28 @@
+diff --git a/node_modules/find-my-way/node.js b/node_modules/find-my-way/node.js
+index 5981104..3519d3c 100644
+--- a/node_modules/find-my-way/node.js
++++ b/node_modules/find-my-way/node.js
+@@ -226,15 +226,14 @@ Node.prototype.prettyPrint = function (prefix, tail) {
+   return tree
+ }
+ 
+-function buildHandlers (handlers) {
+-  var code = `handlers = handlers || {}
+-  `
+-  for (var i = 0; i < http.METHODS.length; i++) {
+-    var m = http.METHODS[i]
+-    code += `this['${m}'] = handlers['${m}'] || null
+-    `
+-  }
+-  return new Function('handlers', code) // eslint-disable-line
++function buildHandlers () {
++  return function (handlers) {
++    handlers = handlers || {};
++    for (var i = 0; i < http.METHODS.length; i++) {
++      var m = http.METHODS[i];
++      this[m] = handlers[m] || null;
++    }
++  };
+ }
+ 
+ module.exports = Node
